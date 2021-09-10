@@ -183,19 +183,33 @@ div {
     text-align: left;
     margin-bottom: 3%;
 }
-.gid li{
+.c1{
     display: flex;
+}
+.gid li button {
+    border: none; 
+    outline: none;
     padding: 10px 10px;
+    background-color: white;
+    align-items: center;
 }
 .gid img{
     width: 25px;
     height: 25px;
-    margin-right: 10%;
+    margin-right: 10px;
 }
 .ti h4{
     font: 700 16px Roboto,sans-serif;
-    display: flex;
-    align-items: center;
+    text-align: start;
+}
+.clas2{
+    font: 16px Roboto,sans-serif;
+    color: grey;
+    padding: 10px 0;
+    padding-left: 35px;
+    border-radius: 20px;
+    text-align: left;
+    transition: 0.25s;
 }
 
 /*    COMPANY */
