@@ -14,20 +14,20 @@
   <div id="app">
 
     <header>
-      <div class="header-container">
+      <div id="header-container">
         <nav role="navigation">
           <ul class="menu">
             <li>
               <img class="logo" src="img/logo.svg" alt="logo">
             </li>
             <li>
-              <a href="#">Сервисы</a>
+              <a href="#services">Сервисы</a>
             </li>
             <li>
-              <a href="#">Как это работает</a>
+              <a href="#how">Как это работает</a>
             </li>
             <li>
-              <a href="#">Где работает СберФуд</a>
+              <a href="#partner">Где работает СберФуд</a>
             </li>
             <li>
               <button>Войти</button>
@@ -69,7 +69,7 @@
 
 
     <!--      MAIN SERVICER -->
-    <section>
+    <section id="services">
       <div class="container1">
         <div class="title">
           <h2>
@@ -130,26 +130,44 @@
 
 
     <!--    HOUW IT WORK -->
-    <section class="howw">
+    <section id="how">
       <h2>
         СберФуд делает выбор и посещение ресторана проще, чтобы вы могли насладиться едой и общением.
         Все, чтобы каждый поход в ресторан стал лучшим!
       </h2>
       <div class="how">
-        <div>
-          <img v-if="flag==1" src="img/for1.png" alt="cart">
-          <img v-if="flag==2" src="img/for2.png" alt="cart">
-          <img v-if="flag==3" src="img/for3.png" alt="cart">
-          <img v-if="flag==4" src="img/for4.png" alt="cart">
-          <img v-if="flag==5" src="img/for5.png" alt="cart">
-        </div>
+          <transition name="fade">
+          <div v-if="flag==1">
+            <img src="img/for1.png" alt="cart">
+          </div>
+        </transition>
+        <transition name="fade">
+          <div v-if="flag==2">
+            <img class="art"  src="img/for2.png" alt="cart">
+          </div>
+        </transition>
+          <transition name="fade">
+          <div v-if="flag==3">
+            <img class="art"  src="img/for3.png" alt="cart">
+          </div>
+        </transition>
+          <transition name="fade">
+          <div v-if="flag==4">
+            <img class="art"  src="img/for4.png" alt="cart">
+          </div>
+        </transition>
+          <transition name="fade">
+          <div v-if="flag==5">
+            <img class="art"  src="img/for5.png" alt="cart">
+          </div>
+        </transition>
         <ul class="ti">
           <li>
             <h2>Как это работает</h2>
           </li>
           <div class="gid">
             <li>
-              <button v-on:click="clic(1)">
+              <button class="pas" v-on:click="clic(1)" v-bind:class="{ activ: flag==1 }">
                 <div class="c1">
                 <img src="img/icon1.png" alt="icon">
                 <h4>Все рестораны в одном приложении</h4>
@@ -160,7 +178,7 @@
               </button>
             </li>
             <li>
-              <button v-on:click="clic(2)">
+              <button class="pas" v-on:click="clic(2)" v-bind:class="{ activ: flag==2 }">
                 <div class="c1">
                   <img src="img/icon2.png" alt="icon">
                 <h4>Предзаказ</h4>
@@ -171,7 +189,7 @@
               </button>
             </li>
             <li>
-              <button v-on:click="clic(3)">
+              <button class="pas" v-on:click="clic(3)" v-bind:class="{ activ: flag==3 }">
                 <div class="c1">
                   <img src="img/icon3.png" alt="icon">
                 <h4>Резерв столика</h4>
@@ -182,7 +200,7 @@
               </button>
             </li>
             <li>
-              <button v-on:click="clic(4)">
+              <button class="pas" v-on:click="clic(4)" v-bind:class="{ activ: flag==4 }">
                 <div class="c1">
                   <img src="img/icon4.png" alt="icon">
                 <h4>Разделяйте счет и оплачивайте без ожидания</h4>
@@ -193,7 +211,7 @@
               </button>
             </li>
             <li>
-              <button v-on:click="clic(5)">
+              <button class="pas" v-on:click="clic(5)" v-bind:class="{ activ: flag==5 }">
                 <div class="c1">
                   <img src="img/icon5.png" alt="icon">
                 <h4>Акции, бонусы, скидки</h4>
@@ -210,7 +228,8 @@
 
 
     <!--  COMPANY   -->
-    <selection class="comp">
+    <selection id="partner">
+      <div class="comp">
       <h2>50 000+ ресторанов в одном приложении</h2>
       <p>Установите СберФуд и воспользуйтесь приложением в ваших любимых местах.</p>
       <div class="company">
@@ -223,6 +242,7 @@
       </div>
       <div class="bort">
       </div>
+    </div>
     </selection>
 
 
